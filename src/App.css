@@ -1,0 +1,47 @@
+.app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.full .element1 {
+  width: 100%;
+}
+
+.split .element1 {
+  width: 70%;
+}
+
+.split .element2 {
+  width: 30%;
+}
+
+.element1, .element2 {
+  padding: 20px;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  margin: 10px;
+}
+
+.split-button, .reset-button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.split-button:hover, .reset-button:hover {
+  background-color: #0056b3;
+}
