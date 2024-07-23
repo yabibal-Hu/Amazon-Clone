@@ -1,0 +1,30 @@
+.container{
+background-color: #efeeee;
+padding: 30px;
+}
+
+.order__container{
+ background-color: #fff;
+ padding:20px;
+}
+
+.order__container h2{
+  padding: 20px;
+  border-bottom: 2px solid var(--primary-shade);
+}
+
+.order__container p{
+ padding: 12px;
+}
+
+.order__container img{
+  width: 150px !important;
+  object-fit: contain;
+  margin: 0 auto;
+ }
+ .order__container{
+  height: auto !important;
+  
+  
+ }
+ /* center the item */

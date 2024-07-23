@@ -1,7 +1,7 @@
 .catagory {
   height: 350px;
   /* befor width:350px */
-  width: 23.2vw;
+  width: 400px;
   /* margin-left: 10px; */
   background-color: white;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
@@ -39,15 +39,15 @@
 }
 
 .catagory__container {
-  width: 90vw;
+  width: 85vw;
   position: relative;
   margin: 0 auto;
   margin-top: -20%;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  /* place-items: center; */
+  grid-template-columns: repeat(auto-fit,minmax(390px, 1fr));
+  place-items: center;
   gap: 10px;
-
+/* max-width: 1600px; */
   flex-wrap: wrap;
     justify-content: center; 
 }

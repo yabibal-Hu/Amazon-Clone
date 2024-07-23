@@ -8,10 +8,10 @@ import ProductDetail from "./Pages/ProductDetail/ProductDetail.jsx";
 import Auth from "./Pages/Auth/Auth.jsx";
 import { Elements } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
+import ProtectedRoute from "./componentes/ProtectedRoute/ProtectedRoute.jsx";
 
-const stripePromise = loadStripe(
-  "pk_test_51Pexf2Rxo6C27obFLkNkSNBPkDnuKSiF3VMKX8pzik5t12nlFf7xsF6RAEtZRaeZsYF4Fz6Z8rN76VufK3cvqG4H00OYUhNVno"
-);
+// const stripePromise = loadStripe(import.meta.env.VITE_FIREBASE_API_KEY);
+const stripePromise = loadStripe(import.meta.env.VITE_STRIPE_PUBLIC_KEY);
 function Routing() {
   return (
     <Router>
@@ -21,12 +21,27 @@ function Routing() {
         <Route
           path="/payment"
           element={
-            <Elements stripe={stripePromise}>
-              <Payment />
-            </Elements>
+            <ProtectedRoute
+              redirect={"/payment"}
+              msg={"you must log in to see your payment"}
+            >
+              <Elements stripe={stripePromise}>
+                <Payment />
+              </Elements>
+            </ProtectedRoute>
           }
         />
-        <Route path="/order" element={<Order />} />
+        <Route
+          path="/order"
+          element={
+            <ProtectedRoute
+              redirect={"/order"}
+              msg={"you must log in to see your order"}
+            >
+              <Order />
+            </ProtectedRoute>
+          }
+        />
         <Route path="/catagory/:catagoryName" element={<Results />} />
         <Route path="/products/:productId" element={<ProductDetail />} />
         <Route path="/cart" element={<Cart />} />

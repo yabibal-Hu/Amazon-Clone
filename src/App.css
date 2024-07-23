@@ -1,11 +1,12 @@
 .app {
-  display: flex;
+  overflow-x: hidden;
+  /* display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  height: 100vh; */
 }
-
+/* 
 .container {
   display: flex;
   justify-content: center;
@@ -44,4 +45,4 @@
 
 .split-button:hover, .reset-button:hover {
   background-color: #0056b3;
-}
+} */

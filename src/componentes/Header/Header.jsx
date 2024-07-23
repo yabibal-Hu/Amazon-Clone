@@ -39,7 +39,7 @@ function Header() {
             <option value="">All</option>
           </select>
           <input type="text" placeholder="Search..." />
-          <BsSearch size={25} />
+          <BsSearch size={38} />
         </div>
         <div className={classes.order__container}>
           <a href="" className={classes.language}>
@@ -51,8 +51,7 @@ function Header() {
               <option value="">EN</option>
             </select>
           </a>
-          <Link className={classes.border} to={!state.user && "/auth"}>
-            {console.log(state.user)}
+          <Link className={`${classes.border} ${classes.border__signUp}`} to={!state.user && "/auth"}>
             {state.user ? (
               <>
                 <p>Hello {state?.user?.email.split("@")[0]}</p>

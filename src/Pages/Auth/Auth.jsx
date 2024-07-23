@@ -1,6 +1,6 @@
 // import LayOut from "../../componentes/LayOut/LayOut";
 
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import classes from "./Signup.module.css";
 import { useState, useContext } from "react";
 import { auth } from "../../Utility/firebase";
@@ -18,8 +18,11 @@ function Auth() {
   const [error, setError] = useState("");
   const [{ user }, dispatch] = useContext(DataContext);
   const [loading, setLoading] = useState({ signIn: false, signUp: false });
-  const navigate = useNavigate();
 
+  const navigate = useNavigate();
+  const navStateData = useLocation();
+  // console.log(navStateData.state.msg)
+  // const message = navStateData.state.msg;
   const authHandler = async (e) => {
     dispatch({
       type: Type.SET_USER,
@@ -38,8 +41,8 @@ function Auth() {
             user: userInfo.user,
           });
           setLoading({ ...loading, signIn: false });
-          console.log(user);
-          navigate("/");
+          // console.log(user);
+          navigate(navStateData?.state?.redirect || "/");
         })
         .catch((err) => {
           setError(err.message);
@@ -55,7 +58,6 @@ function Auth() {
             user: userInfo.user,
           });
           setLoading({ ...loading, signUp: false });
-          console.log(user);
 
           // navigate("/");
         })
@@ -76,7 +78,18 @@ function Auth() {
         />
       </Link>
       <div className={classes.login__container}>
+        {/* {navStateData?.state?.msg} */}
         <h1>Sign In / Sign Up</h1>
+        <p
+          style={{
+            padding: "5px",
+            textAlign: "center",
+            color: "red",
+            fontWeight: "bold",
+          }}
+        >
+          {navStateData?.state?.msg}
+        </p>
         <form action="">
           <div>
             <label htmlFor="email">Email</label>

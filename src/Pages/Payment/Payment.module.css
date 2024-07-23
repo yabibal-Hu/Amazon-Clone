@@ -18,7 +18,7 @@
     min-width: 300px;
 }
 .flex img{
-    width:80px !important;
+    width:180px !important;
 }
 
 .flex div{
@@ -52,4 +52,11 @@ cursor:pointer;
 
 .payment__card__details button:hover{
     background-color:var(--primary-shade)
+}
+
+@media screen and (max-width: 760px) {
+    .flex{
+        flex-direction: column;
+    }
+    
 }

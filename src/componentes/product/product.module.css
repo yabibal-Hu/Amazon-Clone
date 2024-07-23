@@ -7,6 +7,7 @@
   text-decoration: none;
   position: relative;
   margin: 20px 20px;
+  overflow-x: hidden;
 }
 
 .product__fixed {
@@ -15,28 +16,38 @@
   width: 100%;
   height: auto;
   gap: 50px;
-  height: 50vh;
+  height: 40vh;
 }
 
 .product__fixed h3 {
-  padding-top: 100px;
+  /*centter the text on columns*/
+  padding-top: 35%;
+  display: block;
+  position: static;
+  width: 350px;
+  /* margin-right: 40px; */
+
   margin: auto 0;
 }
-
 .product__fixed .button {
   display: block;
   position: static;
-  width: 150px;
+  width: 90%;
   margin-right: 40px;
 }
 
-.product__fixed img {
-  width: 300px !important;
-  height: auto;
-}
+/* .product__fixed > div {
+  display: flex;
+  flex-direction: column;
+} */
+
 
 .card__container:hover .button {
   display: block;
+}
+.product__fixed img {
+  width: 200px !important; ;
+  height: 100% !important;
 }
 
 .card__container img {
@@ -45,6 +56,7 @@
   height: 400px;
   object-fit: contain;
 }
+
 
 .button {
   display: none;

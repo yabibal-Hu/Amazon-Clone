@@ -26,6 +26,7 @@ function Cart() {
     dispatch({ type: Type.REMOVE_TO_BASKET, id: item.id });
     // console.log(item);
   };
+  console.log(user);
 
   return (
     <LayOut>
@@ -41,7 +42,6 @@ function Cart() {
               return (
                 <section key={i} className={classes.cart__product}>
                   <ProductCard
-                    
                     product={item}
                     flex={true}
                     renderDesc={true}
@@ -78,7 +78,7 @@ function Cart() {
               <input type="checkbox" />
               <small>This order contains a gift</small>
             </span>
-            <Link to="/Payment">Continue to checkout</Link>
+            <Link to="/payment">Continue to checkout</Link>
           </div>
         )}
       </section>
