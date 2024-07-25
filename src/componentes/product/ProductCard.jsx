@@ -7,11 +7,9 @@ import { Type } from "../../Utility/action.type";
 import { DataContext } from "../DataProvider/DataProvider";
 
 function ProductCard({ product, flex, renderDesc, renderAdd}) {
-  // console.log(product);
   const { image, rating, id, title, price, description } = product;
 
   const [state, dispatch] = useContext(DataContext);
-  // console.log(state.basket.length);
 
   const addToCart = () => {
     dispatch({
@@ -19,6 +17,7 @@ function ProductCard({ product, flex, renderDesc, renderAdd}) {
       item: { image, rating, id, title, price, description },
     });
   };
+  
 
   return (
     <div
@@ -36,7 +35,7 @@ function ProductCard({ product, flex, renderDesc, renderAdd}) {
         <div className={classes.rating}>
           {rating ? (
             <>
-              <Rating value={rating?.rate} precision={0.1} />
+              <Rating value={rating?.rate} precision={0.1} size="small" />
               <small>{rating?.count}</small>
             </>
           ) : (
@@ -46,13 +45,11 @@ function ProductCard({ product, flex, renderDesc, renderAdd}) {
         <div>
           <CurrencyFormat amount={price} />
         </div>
-        {/* <Link to="/CartOverlay"> */}
           {renderAdd && (
             <button onClick={addToCart} className={classes.button}>
               Add to Cart
             </button>
           )}
-        {/* </Link> */}
       </div>
     </div>
   );

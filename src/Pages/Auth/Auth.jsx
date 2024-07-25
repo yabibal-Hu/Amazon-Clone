@@ -59,7 +59,6 @@ function Auth() {
           });
           setLoading({ ...loading, signUp: false });
 
-          // navigate("/");
         })
         .catch((err) => {
           console.log(err);
@@ -78,7 +77,6 @@ function Auth() {
         />
       </Link>
       <div className={classes.login__container}>
-        {/* {navStateData?.state?.msg} */}
         <h1>Sign In / Sign Up</h1>
         <p
           style={{

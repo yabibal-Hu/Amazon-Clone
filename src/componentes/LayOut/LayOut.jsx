@@ -1,6 +1,7 @@
 import React from "react";
 import Header from "../Header/Header";
 import LowerHeader from "../Header/LowerHeader";
+import Footer from "../Footer/Footer";
 
 function LayOut({ children }) {
   return (
@@ -8,6 +9,7 @@ function LayOut({ children }) {
       <Header />
       <LowerHeader />
       {children}
+      <Footer/>
     </>
   );
 }

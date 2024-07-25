@@ -1,5 +1,7 @@
 .container {
-  display: flex;
+  /* display: flex; */
+  width: 100vw;
+overflow-x: hidden;
   justify-content: center;
   /* align-items: center; */
   gap: 20px;
@@ -13,7 +15,6 @@
 }
 
 .container > div img {
-  /* align the image on the center of the container */
   object-fit: contain;
   height: auto !important;
   width: 100px !important;
@@ -35,6 +36,9 @@
 }
 
 .subtotal {
+  /* position: sticky; */
+  position: -webkit-sticky;
+  top: 40%;
   padding: 20px;
   min-width: 300px;
   height: 80%;
@@ -69,7 +73,14 @@
 
 .cart__product {
   display: flex;
-  gap: 10px;
+  /* width:100%; */
+  /* gap: 10px; */
+}
+
+.cart__product img {
+  width: 300px !important;
+  /* height: 100px !important; */
+  object-fit: contain;
 }
 
 .btn__container{
@@ -93,10 +104,21 @@
   background-color: var(--primary-shade);
 }
 
-/* response for mobile view */
+
 @media screen and (max-width: 768px) {
   .container {
     flex-direction: column;
     order: 1;
   }
+  .cart__product {
+  display: block;
+  gap: 10px;
+}
+.btn__container{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
 }

@@ -1,6 +1,7 @@
 .container{
 background-color: #efeeee;
 padding: 30px;
+overflow: hidden;
 }
 
 .order__container{
@@ -15,6 +16,17 @@ padding: 30px;
 
 .order__container p{
  padding: 12px;
+ font-weight: bold;
+}
+
+.order__info__wrapper {  border: 2px solid var(--primary-shade);
+  border-radius: 10px;
+  padding: 10px;
+  margin: 10px 0;
+}
+  .order__info{
+background-color: #efeeee;
+
 }
 
 .order__container img{
@@ -22,9 +34,24 @@ padding: 30px;
   object-fit: contain;
   margin: 0 auto;
  }
+
+
+.order__wrapper{
+  
+    width: 85vw;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(390px, 1fr));
+  place-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+    justify-content: center; 
+}
+ .product-card{
+  overflow: hidden;
+ height: 200px !important;
+
+ }
  .order__container{
   height: auto !important;
-  
-  
  }
- /* center the item */

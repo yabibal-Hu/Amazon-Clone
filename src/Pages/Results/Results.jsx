@@ -14,7 +14,6 @@ function Results() {
   const { catagoryName } = useParams();
   const [isLoading, setIsLoading] = useState(false);
 
-  // console.log(catagoryName);
   useEffect(() => {
     setIsLoading(true);
 

@@ -20,11 +20,11 @@ function Payment() {
     0
   );
 
+  
   const stripe = useStripe();
   const elements = useElements();
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
-
   const handleChange = (e) => {
     setLoading(false);
     if (e?.error) {
@@ -102,29 +102,29 @@ function Payment() {
           </div>
         </div>
         <hr />
-        <div className={classes.flex}>
+        <div className={classes.flexl}>
           <h3>Review items and delivery</h3>
-          <div>
+          <div className={classes.auot}>
             {basket?.map((item, i) => (
               <ProductCard key={i} product={item} flex={true} />
             ))}
           </div>
         </div>
         <hr />
-        <div className={classes.flex}>
+        <div className={classes.col}>
           <h3>Payment Method</h3>
           <div className={classes.payment__card__container}>
             <div className={classes.payment__card__details}>
               <form onSubmit={handlePayment}>
                 <>
                   {error && <small style={{ color: "red" }}>{error}</small>}
-                  {/* {succeeded && (
-                    <small style={{ color: "green" }}>{succeeded}</small>
-                  )} */}
                 </>
-                <CardElement onChange={handleChange} />
+                <CardElement
+                  className={classes.payment__card}
+                  onChange={handleChange}
+                />
                 <div className={classes.payment__price}>
-                  <div>
+                  <div className={classes.payment__price__total}>
                     <span style={{ display: "flex", gap: "10px" }}>
                       Total Order | <CurrencyFormater amount={totalPrice} />
                     </span>
@@ -141,7 +141,7 @@ function Payment() {
                         <PulseLoader size={8} color="green" />{" "}
                         <p>Please wait...</p>
                       </div>
-                    ) :(
+                    ) : (
                       <b>Pay Now</b>
                     )}
                   </button>

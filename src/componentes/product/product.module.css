@@ -1,33 +1,49 @@
 .card__container {
-  height: 600px;
-  width: 15vw;
+  height: calc(12rem + 18vw);
+  width: 300px;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
   padding: 10px;
   color: black;
   text-decoration: none;
   position: relative;
   margin: 20px 20px;
-  overflow-x: hidden;
+  overflow: hidden;
 }
-
+.card__container h3 {
+  /* font-size: 0.8vw; */
+  font-size: calc(0.3rem + 0.8vw);
+}
+.product__flexd {
+  display: flex;
+  height: calc(5rem + 25vw);
+  width: 300px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  color: black;
+  text-decoration: none;
+  position: relative;
+  margin: 20px 20px;
+  overflow: hidden;
+}
 .product__fixed {
+  overflow: hidden;
   display: flex;
   box-shadow: none;
   width: 100%;
-  height: auto;
+  height: 300px;
   gap: 50px;
-  height: 40vh;
 }
 
 .product__fixed h3 {
-  /*centter the text on columns*/
-  padding-top: 35%;
+  padding-top: 30%;
   display: block;
   position: static;
-  width: 350px;
-  /* margin-right: 40px; */
-
   margin: auto 0;
+  font-size: calc(9rem + 12w);
+}
+
+.product__fixed > div {
+  width: 400px;
 }
 .product__fixed .button {
   display: block;
@@ -35,28 +51,25 @@
   width: 90%;
   margin-right: 40px;
 }
-
-/* .product__fixed > div {
-  display: flex;
-  flex-direction: column;
-} */
+.rating__container {
+  width: 30px;
+}
 
 
 .card__container:hover .button {
   display: block;
 }
 .product__fixed img {
-  width: 200px !important; ;
+  width: 200px !important;
   height: 100% !important;
 }
 
 .card__container img {
   margin: 10px 0;
   width: 100%;
-  height: 400px;
+  height: calc(5rem + 10vw);
   object-fit: contain;
 }
-
 
 .button {
   display: none;
@@ -83,25 +96,21 @@
   display: flex;
   align-items: center;
   padding: 10px 0px;
+  width: 50px;
 }
 
 .product__container {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  max-width: 1450px;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+
+  
+  max-width: 90vw;
   margin: 100px auto 250px auto;
   justify-content: center;
   flex-wrap: wrap;
-  /* gap: 0vw; */
-  /* justify-items: center; */
-  /* display: flex; */
+  justify-items: center;
 }
 .proudct__container section {
   margin: 0 auto;
 }
 
-/* @media screen and (max-width: 768px) {
-  .product__fixed{
-    flex-direction: column;
-  }
-} */

@@ -1,8 +1,8 @@
-.header__outer__container{
-position: sticky;
-top: 0;
-z-index: 100;
-overflow: hidden;
+.header__outer__container {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  overflow: hidden;
 }
 .header__container {
   width: 100vw;
@@ -84,16 +84,15 @@ overflow: hidden;
   gap: 10px;
   max-width: 450px;
 }
-.border{
+.border {
   padding: 10px;
 }
-.border__signUp{
+.border__signUp {
   margin-left: 40px !important;
-
 }
-.border:hover{
+.border:hover {
   border-radius: 5px;
-  border:solid 1px white;
+  border: solid 1px white;
 }
 .order__container a {
   font-size: 13px;
@@ -133,23 +132,21 @@ overflow: hidden;
 .cart span {
   position: absolute;
   font-weight: bold;
-  top: 0;
+  top: 2px;
   font-size: 20px;
   background-color: #1a1a1a;
-  margin:0 auto;
- left: 20px;
+  margin: 0 auto;
+  left: 22px;
   color: orange;
   display: inline;
 }
-.order__container__signUp{
+.order__container__signUp {
   display: flex;
-    justify-content: space-around;
-  /* width: 100%;
-  margin: 0 auto; */
-
+  justify-content: space-around;
+  
 }
-.order__container__signUp:hover{
-  background-color: #E19F00;
+.order__container__signUp:hover {
+  background-color: #e19f00;
   border-radius: 5px;
   border: solid 2px var(--primary-shade);
   color: white;
@@ -167,6 +164,10 @@ overflow: hidden;
   font-weight: 100;
   font-size: 14px;
 }
+.select {
+  display: none;
+  width: 50px;
+}
 
 @media screen and (max-width: 760px) {
   .header__container {
@@ -174,12 +175,21 @@ overflow: hidden;
     flex-direction: column !important;
     height: auto;
   }
-  
+
   .language {
     display: none;
   }
-
 }
-@media screen and (max-width: 480px) {.lower__container li:not(:first-child) {
+
+
+@media screen and (max-width: 480px) {
+  .lower__container li {
     display: none;
-  }}
+  }
+  .select {
+    display: block !important;
+  }
+  .search {
+    width: 70vw !important;
+  }
+}

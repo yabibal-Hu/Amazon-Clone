@@ -1,0 +1,49 @@
+.topBtn{
+ cursor: pointer;
+ width: 100%;
+ background-color: #37475a;
+ color: white;
+ height: 50px;
+ border: none;
+  overflow: hidden;
+
+}
+.topBtn:hover{
+ background-color: #425772;
+}
+.footer__container{
+display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(165px, 1fr));
+
+ justify-content: space-between;
+ padding:50px calc(1rem + 10vw);
+ background-color: #232F3E;
+ color: #DDDDDD;
+}
+.footer__container > div{
+ display: flex;
+ flex-direction: column;
+ padding: 50px 0;
+}
+.footer__container > div > p{
+ font-weight: bold;
+ color: #FFFFFF;
+  padding: 7px 0;
+}
+.footer__container > div > ul{
+  list-style: none;
+  padding: 7px 0;
+}
+.footer__container > div > ul > li{
+  padding: 5px 0;
+  font-size: calc(0.7rem + 0.1vw);
+}
+
+.footer__container > div > ul > li > a{
+ cursor: pointer;
+  text-decoration: none;
+  color: #FFFFFF;
+}
+.footer__container > div > ul > li > a:hover{
+  text-decoration: underline;
+}

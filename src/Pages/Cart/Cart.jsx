@@ -1,5 +1,5 @@
 import classes from "./Cart.module.css";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import LayOut from "../../componentes/LayOut/LayOut";
 import { DataContext } from "../../componentes/DataProvider/DataProvider";
 import ProductCard from "../../componentes/product/ProductCard";
@@ -11,12 +11,11 @@ import { IoIosArrowUp } from "react-icons/io";
 
 function Cart() {
   const [{ basket, user }, dispatch] = useContext(DataContext);
-  // console.log(state.basket.length);
+  const [isLargeScreen, setIsLargeScreen] = useState("true"); // Adjust breakpoint as needed
+
   const total = basket.reduce((ammount, item) => {
     return item.price * item.amount + ammount;
   }, 0);
-  // console.log(basket);
-  // console.log(basket[1].amount);
 
   const increment = (item) => {
     dispatch({ type: Type.ADD_TO_BASKET, item: item });
@@ -24,10 +23,19 @@ function Cart() {
 
   const decrement = (item) => {
     dispatch({ type: Type.REMOVE_TO_BASKET, id: item.id });
-    // console.log(item);
   };
-  console.log(user);
+useEffect(() => {
+  
+  const handleResize = () => {
+    setIsLargeScreen(window.innerWidth > 480 && "false"); // Adjust breakpoint as needed
+  };
 
+  window.addEventListener("resize", handleResize);
+
+  return () => {
+    window.removeEventListener("resize", handleResize);
+  }
+}, []);
   return (
     <LayOut>
       <section className={classes.container}>
@@ -44,7 +52,7 @@ function Cart() {
                   <ProductCard
                     product={item}
                     flex={true}
-                    renderDesc={true}
+                    renderDesc={isLargeScreen}
                     renderAdd={false}
                   />
                   <div className={classes.btn__container}>

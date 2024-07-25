@@ -15,14 +15,12 @@ function Header() {
     <section className={classes.header__outer__container}>
       <div className={classes.header__container}>
         <div className={classes.logo__container}>
-          {/* logo */}
           <Link to="/">
             <img
               src="https://pngimg.com/uploads/amazon/amazon_PNG11.png"
               alt="amazon-logo"
             />
           </Link>
-          {/* delivery */}
           <div className={classes.delivery}>
             <span>
               <SlLocationPin />

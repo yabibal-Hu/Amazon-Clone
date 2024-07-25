@@ -5,7 +5,7 @@ import classes from "./Carousel.module.css";
 
 function CarouselEffect() {
   return (
-    <div>
+    <div className={classes.hero__container}>
       <Carousel
         autoPlay={true}
         autoFocus={false}
@@ -14,12 +14,6 @@ function CarouselEffect() {
         showStatus={false}
         showThumbs={false}
         
-        // showThumbs={false}
-        // centerMode
-        // dynamicHeight={false}
-        // emulateTouch 
-        // swipeScrollTolerance={90}
-        // centerSlidePercentage={100}
       >
         {img.map((imageItemLink, i) => {
           return <img src={imageItemLink} key={i} />;
